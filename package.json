@@ -1,6 +1,6 @@
 {
   "name": "@obiverse/pike-sre",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Pike's Structural Regular Expressions for TypeScript - text transformation as structure, not lines",
   "keywords": [
     "regex",
@@ -90,7 +90,11 @@
       }
     }
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=18"
   },
