@@ -1,0 +1,133 @@
+{
+  "name": "@obiverse/pike-sre",
+  "version": "0.1.0",
+  "description": "Pike's Structural Regular Expressions for TypeScript - text transformation as structure, not lines",
+  "keywords": [
+    "regex",
+    "structural",
+    "pike",
+    "text",
+    "transform",
+    "tokenizer",
+    "lexer",
+    "pattern",
+    "parser"
+  ],
+  "author": "OBIVERSE",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obiverse/pike-sre"
+  },
+  "homepage": "https://github.com/obiverse/pike-sre#readme",
+  "bugs": {
+    "url": "https://github.com/obiverse/pike-sre/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./core": {
+      "import": {
+        "types": "./dist/core.d.ts",
+        "default": "./dist/core.js"
+      },
+      "require": {
+        "types": "./dist/core.d.cts",
+        "default": "./dist/core.cjs"
+      }
+    },
+    "./pattern": {
+      "import": {
+        "types": "./dist/pattern.d.ts",
+        "default": "./dist/pattern.js"
+      },
+      "require": {
+        "types": "./dist/pattern.d.cts",
+        "default": "./dist/pattern.cjs"
+      }
+    },
+    "./glob": {
+      "import": {
+        "types": "./dist/glob.d.ts",
+        "default": "./dist/glob.js"
+      },
+      "require": {
+        "types": "./dist/glob.d.cts",
+        "default": "./dist/glob.cjs"
+      }
+    },
+    "./template": {
+      "import": {
+        "types": "./dist/template.d.ts",
+        "default": "./dist/template.js"
+      },
+      "require": {
+        "types": "./dist/template.d.cts",
+        "default": "./dist/template.cjs"
+      }
+    },
+    "./commands": {
+      "import": {
+        "types": "./dist/commands.d.ts",
+        "default": "./dist/commands.js"
+      },
+      "require": {
+        "types": "./dist/commands.d.cts",
+        "default": "./dist/commands.cjs"
+      }
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist coverage",
+    "prepublishOnly": "npm run clean && npm run build && npm run test",
+    "release": "changeset publish",
+    "size": "size-limit",
+    "validate": "npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@changesets/cli": "^2.27.10",
+    "@size-limit/preset-small-lib": "^11.1.6",
+    "@vitest/coverage-v8": "^2.1.8",
+    "size-limit": "^11.1.6",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "size-limit": [
+    {
+      "path": "dist/core.js",
+      "limit": "4 KB"
+    },
+    {
+      "path": "dist/index.js",
+      "limit": "6 KB"
+    }
+  ]
+}
