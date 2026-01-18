@@ -61,10 +61,8 @@ temp/
 # pnpm-lock.yaml
 # bun.lockb
 
-# Changeset temp files
-.changeset/*.md
-!.changeset/README.md
-!.changeset/config.json
+# Changeset - all files should be tracked
+# (changesets are version bumps, not temp files)
 
 # Misc
 *.tgz
